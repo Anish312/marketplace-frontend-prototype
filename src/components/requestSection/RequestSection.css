@@ -1,0 +1,115 @@
+.requestSection {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    padding:  40px 25px;
+    background-color: aliceblue;
+}
+
+.requestSection-form {
+ 
+    width: 80%;
+}
+.requestSection-btn {
+    width: 150px;
+
+}
+
+.requestSection {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .requestSection-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .custom-dropdown {
+    position: relative;
+    width: 250px;
+    border-radius: 4px; 
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  
+  .custom-dropdown select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .custom-dropdown:after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .requestSection-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .requestSection-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .requestSection-form {
+    
+    margin-top: 20px;
+  }
+  
+  .requestSection-fields {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .requestSection-fields > h3 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .requestSection-fields > label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .requestSection-fields > input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .requestSection-fields input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
