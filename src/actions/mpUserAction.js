@@ -8,7 +8,7 @@ export const marketplaceUserLogin =  () => async (dispatch)  => {
         const config = { headers: { "Content-Type": "application/json" } };
 
         const { data } = await axios.post(
-            `http://localhost:8000/mp/login-anonymous/66e48d9cc3e6da17c380c913`,
+            `http://localhost:4000/mp/login-anonymous/`,
             {},
             { withCredentials: true } // Make sure this is included
           ); 
@@ -26,3 +26,36 @@ export const marketplaceUserLogin =  () => async (dispatch)  => {
           });
     }
 }
+
+export const consoleUserLogin = (email, password) => async (dispatch) => {
+    try {
+      dispatch({ type: MP_USER_LOGIN_REQUEST });
+  
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true, // Ensure cookies are sent if needed
+      };
+  console.log(email, password )
+      // Make a POST request to the login endpoint
+      const { data } = await axios.post(
+        "http://localhost:4000/mp/login",
+        { email, password }, // The request body should include the email and password
+        config
+      );
+  
+      // Store the token in localStorage
+      localStorage.setItem("token", data.token);
+  
+      dispatch({
+        type: MP_USER_LOGIN_SUCCESS,
+        payload: data.user,
+      });
+    } catch (error) {
+      dispatch({
+        type: MP_USER_LOGIN_FAIL,
+        payload: error.response ? error.response.data.message : error.message,
+      });
+    }
+  };

@@ -1,69 +1,87 @@
+/* Sidebar.css */
+
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .userDetails-sidebar {
-    margin-bottom: 20px;
-    width: 100%;
-    overflow:auto;
-  }
-  
-  .userDetails-sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .userDetails-sidebar p {
-    font-size: 14px;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  .allApis-sidebar {
-    margin-top: 20px;
-  }
-  
-  .apis-container-sidebar {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .apis-container-sidebar >p {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #515151;
-  }
-  
-  .api-sidebar-option {
-    font-size: 18px;
-    color: #1f1f1f;
-    margin: 9px 0;
-    cursor: pointer;
-  }
-  
-  /* Scrollbar styling */
-  .sidebar::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  .sidebar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .sidebar::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  .sidebar::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.allUsers-sidebar {
+  margin-bottom: 20px;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content {
+  /* position: absolute; */
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #ddd;
+}
+
+.userDetails-sidebar {
+  margin-bottom: 20px;
+  width: 100%;
+  overflow: auto;
+}
+
+.allApis-sidebar {
+  margin-top: 20px;
+}
+
+.api-sidebar-option {
+  font-size: 18px;
+  color: #1f1f1f;
+  margin: 9px 0;
+  cursor: pointer;
+}
+
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

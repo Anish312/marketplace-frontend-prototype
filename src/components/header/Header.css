@@ -1,0 +1,64 @@
+/* Header.css */
+
+.header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header-logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+  }
+  
+  .header-user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-name {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .header-auth {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+    border: 2px solid transparent;
+  }
+  
+  .header-auth:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .header-auth:active {
+    transform: scale(0.98);
+  }
+  
+  .header-logo:hover {
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+  }
+  

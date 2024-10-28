@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './RequestSection.css';
 import { getProduct, getProductById, postProduct } from '../../api/productApi';
-import { getAllCategories, getCategoryById, postCategory } from '../../api/categoryApi';
+import { getAllCategories, getCategoryById, postCategory, postCategoryProductAssignment } from '../../api/categoryApi';
+import { getAllUsers } from '../../api/usersApi';
 
 function RequestSection({ selectedOption, setResponseData, setSelectedOption  ,setSelectedSection , selectedSection}) {
   const [inputFields, setInputFields] = useState({
@@ -13,10 +14,11 @@ function RequestSection({ selectedOption, setResponseData, setSelectedOption  ,s
     category: {
       postCategory: { categoryId: '', name: '' },
       getCategoryById: { id: '' },
-      getAllCategories: { id: '' }
+      getAllCategories: { id: '' },
+      postCategoryProductAssignment : {productId: '', categoryId: '' }
     },
     me: {
-      getUserById: { name: '', email: '' },  // Fixed the duplicated key
+      getUserById: { name: '', email: '' },  
       updateUser: { name: '', email: '' }
     }
   });
@@ -46,8 +48,11 @@ function RequestSection({ selectedOption, setResponseData, setSelectedOption  ,s
       getAllCategories: getAllCategories,
       postCategory: postCategory,
       getCategoryById: getCategoryById,
-      // postCategoryProductAssignment : postCategoryProductAssignment
+       postCategoryProductAssignment : postCategoryProductAssignment
     },
+    users:{
+      getAllUsers: getAllUsers,
+    }
     // me: {
     //   getUserById: getUserById,
     //   updateUser: updateUser

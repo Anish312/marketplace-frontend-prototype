@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/mp', // Replace with your actual API base URL
+  baseURL: 'http://localhost:4000/mp', // Replace with your actual API base URL
   headers: {
     'Content-Type': 'application/json',
   }
@@ -43,18 +43,11 @@ export const getAllCategories = async () => {
 
   export const postCategoryProductAssignment = async (data) => {
     try {
-      const categoryId= data.categoryId
-      const productId= data.productId
-
-      const product = await api.get(`product/${productId}`);
-
-
-
-
-      const response = await api.get(`category/${categoryId}`);
+      console.log(data);
+      const response = await api.put("categories/productassigments", data);
       return response.data;
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error posting category product assignment:", error);
       throw error;
     }
   };

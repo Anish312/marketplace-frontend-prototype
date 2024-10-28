@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/mp', // Replace with your actual API base URL
+  baseURL: 'http://localhost:4000/mp', // Replace with your actual API base URL
   headers: {
     'Content-Type': 'application/json',
     // Add any other headers you need
@@ -30,7 +30,7 @@ export const postProduct = async ( data) => {
     description: data?.description,
     productId : data?.productId
   }
-
+console.log(updatedData)
   try {
     const response = await api.post("/product", updatedData);
     return response.data;

@@ -7,20 +7,24 @@ import { marketplaceUserLogin } from '../../actions/mpUserAction';
 import Sidebar from '../../components/sidebar/Sidebar';
 import RequestSection from '../../components/requestSection/RequestSection';
 import ResponseSection from '../../components/responseSection/ResponseSection';
+import { getAllUsers } from '../../api/usersApi';
 
 function Console() {
   const { marketplaceId } = useParams();
   const dispatch = useDispatch();
   const { isAuthenticated, mpUser } = useSelector((state) => state.marketplaceUser);
+  const [marketplaceUsers, setMarketplaceUsers] = useState([]); 
 
   const [selectedOption, setSelectedOption] = useState(null); 
   const [responseData, setResponseData] = useState(null); 
 
   useEffect(() => {
     dispatch(getMarketplaceDetails(marketplaceId));
+    getMarketplaceUsers();
     dispatch(marketplaceUserLogin());
   }, [marketplaceId]);
   const [selectedSection, setSelectedSection] = useState(); // Track selected section
+
 
   const handleSidebarSelection = (option) => {
     setSelectedSection("")
@@ -28,9 +32,21 @@ function Console() {
     
   };
 
+  const   getMarketplaceUsers = async() => {
+    try {
+      const users = await getAllUsers();
+      console.log('users:', users.users);
+      setMarketplaceUsers(users.users)
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  }
   return (
     <div className='console'>
-      <Sidebar logedUserDetails={mpUser} onSelection={handleSidebarSelection} /> {/* Pass handler */}
+      <div className='console-userSelection'>
+        
+      </div>
+      <Sidebar logedUserDetails={mpUser}  marketplaceUsers={marketplaceUsers} onSelection={handleSidebarSelection} /> {/* Pass handler */}
       <RequestSection 
         selectedOption={selectedOption} 
         setSelectedOption={setSelectedOption} 
